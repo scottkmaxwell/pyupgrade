@@ -31,6 +31,7 @@ def test_format_literals_noop(s):
     assert _fix_tokens(s) == s
 
 
+@pytest.mark.skip('Zoox(smaxwell): We do not want this behavior')
 @pytest.mark.parametrize(
     ('s', 'expected'),
     (

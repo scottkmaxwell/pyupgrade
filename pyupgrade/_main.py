@@ -286,8 +286,9 @@ def _fix_tokens(contents_text: str) -> str:
             tokens[i] = _fix_escape_sequences(_remove_u_prefix(tokens[i]))
         elif token.src == '(':
             _fix_extraneous_parens(tokens, i)
-        elif token.src == 'format' and i > 0 and tokens[i - 1].src == '.':
-            _fix_format_literal(tokens, i - 2)
+        # Zoox(smaxwell): We do not want to remove format indices
+        # elif token.src == 'format' and i > 0 and tokens[i - 1].src == '.':
+        #     _fix_format_literal(tokens, i - 2)
         elif token.src == 'encode' and i > 0 and tokens[i - 1].src == '.':
             _fix_encode_to_binary(tokens, i)
         elif (

@@ -58,15 +58,6 @@ Sample `.pre-commit-config.yaml`:
 ```
 
 
-### Format Specifiers
-
-```diff
--'{0} {1}'.format(1, 2)
-+'{} {}'.format(1, 2)
--'{0}' '{1}'.format(1, 2)
-+'{}' '{}'.format(1, 2)
-```
-
 ### printf-style string formatting
 
 Availability:
